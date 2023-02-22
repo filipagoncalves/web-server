@@ -7,8 +7,7 @@
     <list default="true" id="0a718ba9-43ed-48cc-8b7d-2e096aad9d4c" name="Changes" comment="HttpHeaderBuilder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/www/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/www/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/HttpHeaderBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/HttpHeaderBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -77,6 +77,7 @@ public class Server {
                     String terminalIn = in.readLine();
                     String[] terminalContent = terminalIn.replace("/", "").split(" ");
                     System.out.println("step1");
+                    System.out.println(Arrays.toString(terminalContent));
                     if (!terminalContent[0].equals("GET")) {
                         send(HttpHeaderBuilder.badRequest());
                         System.out.println("step2");
@@ -87,7 +88,7 @@ public class Server {
                     System.out.println("step3");
 
                     //PATH NOT FOUND -> 404
-                    if (!fileList.contains(terminalContent[1])) {
+                    if (!fileList.contains(terminalContent[1]) || !terminalContent[2].equals("HTTP1.1")) {
                         //SEND 404 PAGE
                         System.out.println("3.1");
                         Path filePath = Paths.get("src/www/404.html");
