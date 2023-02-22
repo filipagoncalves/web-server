@@ -4,6 +4,9 @@ import utils.HttpHeaderBuilder;
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,12 +19,14 @@ public class Server {
 
     public static void main(String[] args) {
         int port = 8080;
-        if(System.getenv("PORT") != null){
+        if (System.getenv("PORT") != null) {
             port = Integer.parseInt(System.getenv("PORT"));
         }
 
         try {
-            new Server().start(port);
+
+            Server server = new Server();
+            server.start(port);
         } catch (IOException e) {
             System.err.println(Messages.SERVER_ERROR);
             e.printStackTrace();
@@ -44,7 +49,7 @@ public class Server {
         service.submit(requestHandler);
     }
 
-    public static class RequestHandler implements Runnable{
+    public static class RequestHandler implements Runnable {
 
         private BufferedReader in;
         private BufferedWriter out;
@@ -53,40 +58,68 @@ public class Server {
             try {
                 this.in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 this.out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
-            } catch (IOException e){
+            } catch (IOException e) {
                 clientSocket.close();
             }
+        }
+
+        public void send(String message) throws IOException {
+            out.write(message);
+            out.newLine();
+            out.flush();
         }
 
         @Override
         public void run() {
             try {
-                String terminalIn = in.readLine();
-                String [] terminalContent = terminalIn.replace("/" , "").split(" ");
-                System.out.println(terminalContent);
-                if (!terminalContent[0].equals("GET")){
-                    HttpHeaderBuilder.badRequest();
+                while (true) {
+                    System.out.println("step0");
+                    String terminalIn = in.readLine();
+                    String[] terminalContent = terminalIn.replace("/", "").split(" ");
+                    System.out.println("step1");
+                    if (!terminalContent[0].equals("GET")) {
+                        send(HttpHeaderBuilder.badRequest());
+                        System.out.println("step2");
+                    }
+                    File directoryPath = new File("src/www");
+                    List<String> fileList = Arrays.asList(directoryPath.list());
+                    fileList.contains(terminalContent[1]);
+                    System.out.println("step3");
+
+                    //PATH NOT FOUND -> 404
+                    if (!fileList.contains(terminalContent[1])) {
+                        //SEND 404 PAGE
+                        System.out.println("3.1");
+                        Path filePath = Paths.get("src/www/404.html");
+                        File selectedFile = new File(filePath.toUri());
+                        String fileContent = Files.readString(filePath);
+                        send(fileContent);
+
+                        //HEADER
+                        send(HttpHeaderBuilder.notFound(terminalContent[1], selectedFile.length()));
+
+                        System.out.println("step4");
+
+                        //PATH FOUND -> FILE
+                    } else {
+                        System.out.println("step5");
+                        Path filePath = Paths.get("src/www/" + terminalContent[1]);
+                        File selectedFile = new File(filePath.toUri());
+                        send(HttpHeaderBuilder.ok(terminalContent[1], selectedFile.length()));
+
+                        String fileContent = Files.readString(filePath);
+                        send(fileContent);
+                        System.out.println("step6");
+                    }
+                    System.out.println("step7");
                 }
-                File directoryPath = new File("src/www");
-                List<String> fileList = Arrays.asList(directoryPath.list());
-                fileList.contains(terminalContent[1]);
 
-
-               // if (fileList.contains(terminalContent[1]))
-
-
-                //terminalContent[1].contains();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
 
 
-            /*GET /teste.html HTTP/1.1
-
-            GET / HTTP/1.1
-            GET /index.html HTTP/1.1
-            GET /cry-me-a-river.gif HTTP/1.1*/
-
         }
     }
 }
+
