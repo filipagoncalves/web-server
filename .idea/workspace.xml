@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a718ba9-43ed-48cc-8b7d-2e096aad9d4c" name="Changes" comment="1st version">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/HttpHeaderBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/HttpHeaderBuilder.java" afterDir="false" />
-    </list>
+    <list default="true" id="0a718ba9-43ed-48cc-8b7d-2e096aad9d4c" name="Changes" comment="HttpHeaderBuilder contentType" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -65,7 +61,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677076024582</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="HttpHeaderBuilder contentType">
+      <created>1677080889549</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677080889549</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -81,6 +84,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1st version" />
-    <option name="LAST_COMMIT_MESSAGE" value="1st version" />
+    <MESSAGE value="HttpHeaderBuilder contentType" />
+    <option name="LAST_COMMIT_MESSAGE" value="HttpHeaderBuilder contentType" />
   </component>
 </project>
