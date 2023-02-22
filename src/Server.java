@@ -1,6 +1,12 @@
+import com.sun.tools.javac.Main;
+import utils.HttpHeaderBuilder;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -54,7 +60,25 @@ public class Server {
 
         @Override
         public void run() {
+            try {
+                String terminalIn = in.readLine();
+                String [] terminalContent = terminalIn.replace("/" , "").split(" ");
+                System.out.println(terminalContent);
+                if (!terminalContent[0].equals("GET")){
+                    HttpHeaderBuilder.badRequest();
+                }
+                File directoryPath = new File("src/www");
+                List<String> fileList = Arrays.asList(directoryPath.list());
+                fileList.contains(terminalContent[1]);
 
+
+               // if (fileList.contains(terminalContent[1]))
+
+
+                //terminalContent[1].contains();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
 
             /*GET /teste.html HTTP/1.1

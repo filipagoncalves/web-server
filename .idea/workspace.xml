@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a718ba9-43ed-48cc-8b7d-2e096aad9d4c" name="Changes" comment="1st version - added new files">
+    <list default="true" id="0a718ba9-43ed-48cc-8b7d-2e096aad9d4c" name="Changes" comment="HttpHeaderBuilder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/HttpHeaderBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/HttpHeaderBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +55,13 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration name="Server$RequestHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server$RequestHandler" />
+      <module name="web-server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="web-server" />
       <method v="2">
@@ -66,6 +75,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Server$RequestHandler" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -90,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677079146330</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="HttpHeaderBuilder">
+      <created>1677082096480</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677082096480</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -108,6 +129,7 @@
     <MESSAGE value="1st version" />
     <MESSAGE value="1st version - added new files" />
     <MESSAGE value="HttpHeaderBuilder contentType" />
-    <option name="LAST_COMMIT_MESSAGE" value="HttpHeaderBuilder contentType" />
+    <MESSAGE value="HttpHeaderBuilder" />
+    <option name="LAST_COMMIT_MESSAGE" value="HttpHeaderBuilder" />
   </component>
 </project>
