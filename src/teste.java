@@ -1,3 +1,4 @@
+/*
 import com.sun.tools.javac.Main;
 import utils.HttpHeaderBuilder;
 
@@ -36,8 +37,8 @@ public class Server {
     public void start(int port) throws IOException {
         this.serverSocket = new ServerSocket(port);
         this.service = Executors.newCachedThreadPool();
-        while (true) {
 
+        while (true) {
             acceptConnection(serverSocket, service);
         }
 
@@ -52,6 +53,7 @@ public class Server {
     }
 
     public static class RequestHandler implements Runnable {
+
         private BufferedReader in;
         private OutputStream out;
 
@@ -101,18 +103,36 @@ public class Server {
 
                         System.out.println("step4");
 
-                        //PATH FOUND -> SEND FILE
+                        //PATH FOUND -> FILE
                     } else {
-                        System.out.println("step5");
                         Path filePath = Paths.get("src/www/" + terminalContent[1]);
                         File selectedFile = new File(filePath.toUri());
-                        send(HttpHeaderBuilder.ok(terminalContent[1], selectedFile.length()));
 
-                        byte[] fileBytes = Files.readAllBytes(filePath);
-                        out.write(fileBytes);
-                        out.flush();
-                        System.out.println("step6");
+                        if (terminalContent[1].endsWith(".html")) {
+                            // send HTML page
+                            String fileContent = Files.readString(filePath);
+                            send(HttpHeaderBuilder.ok(terminalContent[1], selectedFile.length()));
+                            send(fileContent);
+
+                            // send image
+                            Path imagePath = Paths.get("src/www/welcome.gif");
+                            File imageFile = new File(imagePath.toUri());
+                            BufferedInputStream bis = new BufferedInputStream(new FileInputStream(imageFile));
+                            byte[] buffer = new byte[1024];
+                            int count;
+                            while ((count = bis.read(buffer)) != -1) {
+                                out.write(buffer, 0, count);
+                            }
+                            out.flush();
+                        } else {
+                                // send other files
+                                send(HttpHeaderBuilder.ok(terminalContent[1], selectedFile.length()));
+                                byte[] fileBytes = Files.readAllBytes(filePath);
+                                out.write(fileBytes);
+                                out.flush();
+                            }
                     }
+
                     System.out.println("step7");
                 }
 
@@ -125,3 +145,5 @@ public class Server {
     }
 }
 
+
+ */
