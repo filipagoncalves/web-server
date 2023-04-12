@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a718ba9-43ed-48cc-8b7d-2e096aad9d4c" name="Changes" comment="- Working webserver">
-      <change afterPath="$PROJECT_DIR$/src/teste.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/www/monkeysmile.jpeg" afterDir="false" />
+    <list default="true" id="0a718ba9-43ed-48cc-8b7d-2e096aad9d4c" name="Changes" comment="- OutPutStream&#10;- Accept multiple connections/requests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/www/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/www/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/www/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +112,21 @@
       <option name="project" value="LOCAL" />
       <updated>1677097143227</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="- OutPutStream&#10;- Accept multiple connections/requests">
+      <created>1677145832754</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1677145832754</updated>
+    </task>
+    <task id="LOCAL-00006" summary="- OutPutStream&#10;- Accept multiple connections/requests">
+      <created>1677146042406</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1677146042406</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -137,6 +146,7 @@
     <MESSAGE value="HttpHeaderBuilder contentType" />
     <MESSAGE value="HttpHeaderBuilder" />
     <MESSAGE value="- Working webserver" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Working webserver" />
+    <MESSAGE value="- OutPutStream&#10;- Accept multiple connections/requests" />
+    <option name="LAST_COMMIT_MESSAGE" value="- OutPutStream&#10;- Accept multiple connections/requests" />
   </component>
 </project>
